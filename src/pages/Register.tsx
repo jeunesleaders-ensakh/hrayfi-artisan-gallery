@@ -33,7 +33,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://api.achrafmansari.com/api/regions/')
+    fetch('http://127.0.0.1:8000/api/regions/')
       .then((res) => res.json())
       .then((data) => setRegions(data.results))
       .catch((err) => console.error('Error fetching regions:', err));
@@ -77,7 +77,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('https://api.achrafmansari.com/api/auth/register/', {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/register/', {
         method: 'POST',
         body: data,
       });

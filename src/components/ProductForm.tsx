@@ -29,11 +29,11 @@ const ProductForm = ({ isOpen, onClose, onSave, artisanId, editingProduct }: Pro
   const [regions, setRegions] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.achrafmansari.com/api/categories/")
+    fetch("http://127.0.0.1:8000/api/categories/")
       .then((res) => res.json())
       .then((data) => setCategories(data.results || data));
 
-    fetch("https://api.achrafmansari.com/api/regions/")
+    fetch("http://127.0.0.1:8000/api/regions/")
       .then((res) => res.json())
       .then((data) => setRegions(data.results || data));
   }, []);
@@ -98,8 +98,8 @@ useEffect(() => {
 
     const method = editingProduct ? "PUT" : "POST";
     const url = editingProduct
-      ? `https://api.achrafmansari.com/api/products/${editingProduct.id}/`
-      : "https://api.achrafmansari.com/api/products/";
+      ? `http://127.0.0.1:8000/api/products/${editingProduct.id}/`
+      : "http://127.0.0.1:8000/api/products/";
 
     try {
       const res = await fetch(url, {

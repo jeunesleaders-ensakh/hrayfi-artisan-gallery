@@ -43,7 +43,7 @@ const ArtisanProfileForm = ({ artisan, onUpdate }: ArtisanProfileFormProps) => {
 
   useEffect(() => {
     // Fetch regions for the select dropdown
-    fetch('https://api.achrafmansari.com/api/regions/')
+    fetch('http://127.0.0.1:8000/api/regions/')
       .then(res => res.json())
       .then(data => setRegions(data.results))
       .catch(err => console.error('Failed to fetch regions:', err));
@@ -68,7 +68,7 @@ const ArtisanProfileForm = ({ artisan, onUpdate }: ArtisanProfileFormProps) => {
         submitData.append('main_image', selectedImage);
       }
 
-      const response = await fetch(`https://api.achrafmansari.com/api/artisans/${artisan.id}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/artisans/${artisan.id}/`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

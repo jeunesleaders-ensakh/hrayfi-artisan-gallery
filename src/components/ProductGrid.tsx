@@ -62,7 +62,7 @@ const ProductGrid = () => {
 useEffect(() => {
   const fetchProducts = () => {
     setLoading(true);
-    fetch(`https://api.achrafmansari.com/api/products/?page=${currentPage}`)
+    fetch(`http://127.0.0.1:8000/api/products/?page=${currentPage}`)
       .then((res) => res.json())
       .then((data) => {
         console.log('Fetched products:', data);

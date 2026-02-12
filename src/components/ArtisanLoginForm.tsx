@@ -57,7 +57,7 @@ const ArtisanLoginForm = ({ artisan, onUpdate }: ArtisanLoginFormProps) => {
         new_password: formData.newPassword,
       };
 
-      const response = await fetch(`https://api.achrafmansari.com/api/artisans/${artisan.id}/change-password/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/artisans/${artisan.id}/change-password/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -54,7 +54,7 @@ const ProductDetails = () => {
     return;
   }
   setLoading(true);
-  fetch(`https://api.achrafmansari.com/api/products/${id}/`)
+  fetch(`http://127.0.0.1:8000/api/products/${id}/`)
     .then(res => {
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);

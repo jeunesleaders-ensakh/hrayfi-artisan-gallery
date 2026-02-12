@@ -76,7 +76,7 @@ const ArtisanPage = () => {
     
     console.log('Fetching artisan data for ID:', id);
     setLoadingArtisan(true);
-    fetch(`https://api.achrafmansari.com/api/artisans/${id}/`, {
+    fetch(`http://127.0.0.1:8000/api/artisans/${id}/`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const ArtisanPage = () => {
     console.log('Fetching products for artisan ID:', id);
     setLoadingProducts(true);
     setError(null);
-    fetch(`https://api.achrafmansari.com/api/artisans/${id}/products/`, {
+    fetch(`http://127.0.0.1:8000/api/artisans/${id}/products/`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ const ArtisanPage = () => {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`https://api.achrafmansari.com/api/products/${productId}/`, {
+      const res = await fetch(`http://127.0.0.1:8000/api/products/${productId}/`, {
         method: "DELETE",
       });
 
